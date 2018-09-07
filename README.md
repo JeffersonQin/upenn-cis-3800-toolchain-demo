@@ -33,6 +33,9 @@
         - `llvm-symbolizer`
     - How to debug use after free [useAfterFree() `./samp_san u`]
     - How to debug leak [leak() `./samp_san l`]
+- Resources 
+    - [Cheat Sheet](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
+    - [Tutorial](http://www.brendangregg.com/blog/2016-08-09/gdb-example-ncurses.html)
 
 ## `TMUX` (Terminal Multiplexing)
 - What does it do?
