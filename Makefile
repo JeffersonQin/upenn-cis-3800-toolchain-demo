@@ -9,12 +9,13 @@ default: samp
 samp: sample.o 
 	$(CC) $(CFLAGS) $^ -o $@
 # $< = name of first dependant file (here that is <something>.c)
+# % = The % will match any string in the target and then use that string to fill in the dependant files
 %.o : %.c %.h 
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 # $(RM) is the platform agnostic way to delete a file (here rm -f)
 clean: 
-	$(RM) samp *.o 
+	$(RM) samp samp_san *.o 
 
 
 ## Sanatizers

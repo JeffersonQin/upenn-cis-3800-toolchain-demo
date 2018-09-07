@@ -1,7 +1,19 @@
 # CIS 380 Review Session
 ---
 
-## `GDB`
+##Setup
+- `sample.c` is compiled into the `samp` executable
+    - Depending on an argument it calls different function.
+    - 'm' => `myFunction` just adds numbers and prints.
+    - 's' => `segf` segfaults.
+    - 'f' => `fork_example` forks a child process and then waits on it.
+    - 'u' => `useAfterFree` use after free error.
+    - 'l' => `leak` creates a memory leak.
+- 'samp_san' executable
+    - Compilied with clang sanatizers turned on.
+    - Use for memory leak and use after free.
+
+## Debugging with `gdb`
 - How to use:
     - Use `-g` flag (and `- Wall`)
     - start via `$ gdb <executable>`
@@ -58,15 +70,22 @@
         - switch `<prefix> <number>`
 - Good Config
     - [cis380/gists](https://github.com/cis380/gists)
-    - install as `~/.tmux.conf`
+    - install by copying into `~/.tmux.conf`
 
 ## Git
+- I'm assuming you have basic git familiarity.
+- Collaboration
+    - Often we are in a scenario when two people want to push to the same branch.
+    - This creates a problem, as only one will be able to do it and the other will need to merge.
+    - What we really want is whoever is second to have their changes be on _top_ of first's.
+    - `git pull --rebase`
+        - Will apply the commits you are pulling *under* your current work.
 
 ## Vim
 - I'm going to assume you're familiar with basic vim.
 - Settings 
     - `jj` escapes normal mode
-    - Line numbers on
+    - Line numbering on
     - Tabs are 4 spaces
 - Extra goodies 
     - `ctrl p` search for files in git repo.
