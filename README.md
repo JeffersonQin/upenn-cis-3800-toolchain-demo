@@ -1,0 +1,35 @@
+# CIS 380 Review Session
+---
+
+- `GDB`
+    - How to use:
+        - Use `-g` flag (and `- Wall`)
+        - start via `$ gdb <executable>`
+        - Begin debugging `(gdb) start <args>`
+        - Switch to terminal UI (TUI) via `ctrl-x a`
+    - Simple usage [use myFunction() `./samp m`]
+        - `step` (`s`)
+        - `breakpoint` (`b`)
+            - `info breakpoints`
+            - `d <breakpoint>`
+            - `clear` (Deletes all breakpoints)
+        - `continue` (`c`)
+        - `finish` (`f`)
+    - How to debug with segfaults [use segf() `./samp s`]:
+        - `backtrace` (`bt`)
+    - How to debugg multi-threaded programs [use fork_example() `./samp f`]
+        - `set follow-fork-mode <child/parent>`
+    - Signal Handling
+        - `catch signal <code>`
+            - stops `gdb` from passing the signal to program
+        -  `handle <signal> <action>`
+    - Sanitziers
+        - Compile options for `clang`/`gcc`
+            - Wrap `malloc`, `free`, etc.
+            - Maintain metadata, find problems
+        - Great for memory leaks, use after free, etc.
+        - What do we need?
+            - Compile options (see `Makefile`)
+            - `llvm-symbolizer`
+        - How to debug use after free [useAfterFree() `./samp_san u`]
+        - How to debug leak [leak() `./samp_san l`]
