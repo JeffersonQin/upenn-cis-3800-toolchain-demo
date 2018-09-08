@@ -2,12 +2,16 @@
 CC = clang 
 # Ditto for the flags we will want to use everywhere
 CFLAGS  = -g -Wall
+# If no arguments are passed to make, it will attempt the 'samp' target
 default: samp
 
+# This will construct the binary 'samp' using the dependancy 'sample.o'
 # $^ = names of all dependant files, deduped and with spaces
 # $@ = complete name of the target 
 samp: sample.o 
 	$(CC) $(CFLAGS) $^ -o $@
+
+# This will construct arbitrary *.o targets given the matching *.c and *.h files.
 # $< = name of first dependant file (here that is <something>.c)
 # % = The % will match any string in the target and then use that string to fill in the dependant files
 %.o : %.c %.h 

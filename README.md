@@ -104,3 +104,10 @@
     - [Install More](https://vimawesome.com/)
 
 ## Makefiles
+- Most of what `make` is doing is dependancy resolution.
+- What comes before the `:` is a target.
+    - What comes after are the things it depends on.
+- Beneath the target and dependancies is the receipe.
+    - This means, given all the dependancies, it will construct the target.
+- Essentially, a Makefile defines a graph from your source files/directories to executable binaries.
+- Please see the Makefile in the repo for more details.
