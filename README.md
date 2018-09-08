@@ -9,16 +9,17 @@
     - 'f' => `fork_example` forks a child process and then waits on it.
     - 'u' => `useAfterFree` use after free error.
     - 'l' => `leak` creates a memory leak.
-- 'samp_san' executable via `make samp_san`
+- `samp_san` executable via `make samp_san`
     - Compilied with clang sanatizers turned on.
     - Use for memory leak and use after free.
 
 ## Debugging with `gdb`
 - How to use:
-    - Use `-g` flag (and `- Wall`)
+    - Compile with `-g` flag (and `- Wall`)
     - start via `$ gdb <executable>`
     - Begin debugging `(gdb) start <args>`
-    - Switch to terminal UI (TUI) via `ctrl-x a`
+    - Toggle in/out of terminal UI (TUI) via `ctrl-x a`
+        - If the ui looks wonky, simple leave and re-enter ui mode.
 - Simple usage [use myFunction() `./samp m`]
     - `step` (`s`)
     - `breakpoint` (`b`)
@@ -84,21 +85,24 @@
 ## Vim
 - I'm going to assume you're familiar with basic vim.
 - Settings 
-    - `jj` escapes normal mode
-    - Line numbering on
-    - Tabs are 4 spaces
-- Extra goodies 
-    - `ctrl p` search for files in git repo.
-        - `buffer` or `b` ...
+    - `jj` escapes to normal mode from insert mode.
+    - Line numbering on.
+    - Tabs are 4 spaces.
+- Extra goodies
+    - `ctrl p` search for files in git repo which are opened in buffers.
+        - `:buffer` or `:b` ...
             - `d` delete
             - `p` previous
             - `n` next
+        - `:b <Tab>` to autocomplete with open buffers.
     - linting
-    - auto formatting (with a clangformat file)
-    - good syntax highlighting
-    - git integration
+    - auto formatting (with a `.clang-format` file)
+        - Make one [here](https://clangformat.com/), click on a line to see what it does.
+        - Simply put it in the directory root.
+    - Good syntax highlighting
+    - `git` integration
         - `:GBlame` = see who messed up the code
-    - git line status
+    - `git` line status
 - Plenty of plugins are there, check them out, look at `~/.vimrc`
     - [Plugin Manager](https://github.com/junegunn/vim-plug)
     - [Install More](https://vimawesome.com/)
