@@ -1,15 +1,15 @@
 # CIS 380 Review Session
 ---
 
-##Setup
-- `sample.c` is compiled into the `samp` executable
+## Usage Information 
+- `sample.c` is compiled into the `samp` executable using `make`
     - Depending on an argument it calls different function.
     - 'm' => `myFunction` just adds numbers and prints.
     - 's' => `segf` segfaults.
     - 'f' => `fork_example` forks a child process and then waits on it.
     - 'u' => `useAfterFree` use after free error.
     - 'l' => `leak` creates a memory leak.
-- 'samp_san' executable
+- 'samp_san' executable via `make samp_san`
     - Compilied with clang sanatizers turned on.
     - Use for memory leak and use after free.
 
