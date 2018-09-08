@@ -98,7 +98,7 @@
     - linting
     - auto formatting (with a `.clang-format` file)
         - Make one [here](https://clangformat.com/), click on a line to see what it does.
-        - Simply put it in the directory root.
+        - Simply put it in the project root.
     - Good syntax highlighting
     - `git` integration
         - `:GBlame` = see who messed up the code
