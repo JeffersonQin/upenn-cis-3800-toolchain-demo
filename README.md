@@ -44,6 +44,7 @@
     - What do we need?
         - Compile options (see `Makefile`)
         - `llvm-symbolizer`
+            - You probably need to install it (usually in the `llvm` package)
     - How to debug use after free [useAfterFree() `./samp_san u`]
     - How to debug leak [leak() `./samp_san l`]
 - Resources 
