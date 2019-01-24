@@ -45,6 +45,9 @@
         - Compile options (see `Makefile`)
         - `llvm-symbolizer`
             - You probably need to install it (usually in the `llvm` package)
+            - You may also already have it installed as `llvm-symbolizer-6.0` or `llvm-symbolizer-3.6`
+                - In either of these cases symlink the newer version to the default path
+                - `sudo ln -s /usr/bin/llvm-symbolizer /usr/bin/llvm-symbolizer-<version>`
     - How to debug use after free [useAfterFree() `./samp_san u`]
     - How to debug leak [leak() `./samp_san l`]
 - Resources 
