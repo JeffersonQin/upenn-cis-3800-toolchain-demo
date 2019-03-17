@@ -8,14 +8,17 @@ default: samp
 # This will construct the binary 'samp' using the dependancy 'sample.o'
 # $^ = names of all dependant files, deduped and with spaces
 # $@ = complete name of the target 
-samp: sample.o 
+samp: sample.o
 	$(CC) $(CFLAGS) $^ -o $@
 
 # This will construct arbitrary *.o targets given the matching *.c and *.h files.
 # $< = name of first dependant file (here that is <something>.c)
 # % = The % will match any string in the target and then use that string to fill in the dependant files
-%.o : %.c %.h 
-	$(CC) $(CFLAGS) -o $@ -c $<
+# %.o : %.c %.h
+	# $(CC) $(CFLAGS) -o $@ -c $<
+
+# However, by default make will do this if it doesn't have a receipe for .c files via implicit rules
+# https://www.gnu.org/software/make/manual/make.html#Implicit-Rules<Paste>
 
 # $(RM) is the platform agnostic way to delete a file (here rm -f)
 clean: 
