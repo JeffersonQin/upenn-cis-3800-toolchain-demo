@@ -11,6 +11,10 @@ default: samp
 samp: sample.o
 	$(CC) $(CFLAGS) $^ -o $@
 
+# Note: the following section does not necessarily have to exist
+# and that's why they are commented out.
+# they are automatically applied
+# 
 # This will construct arbitrary *.o targets given the matching *.c and *.h files.
 # $< = name of first dependant file (here that is <something>.c)
 # % = The % will match any string in the target and then use that string to fill in the dependant files
